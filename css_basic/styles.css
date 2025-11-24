@@ -31,6 +31,38 @@ aside {
     /* Enable scrolling if content overflows */
 }
 
+/* Example: body background and font color */
+body {
+    background-color: #f4f4f9;
+    /* light gray background */
+    color: #333;
+    /* dark gray text */
+}
+
+/* Example: article styling */
+article {
+    background-color: #ffffff;
+    /* white background */
+    border-radius: 10px;
+    /* rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* subtle shadow */
+    padding: 30px;
+}
+
+/* Example: links hover effect */
+a:hover {
+    color: #0077cc;
+    /* change link color on hover */
+    text-decoration: underline;
+}
+
+/* Example: style the logo in header */
+header li.logo {
+    font-size: 48px;
+    /* make it bigger */
+    margin-right: 20px;
+}
 /* Existing CSS reset rules and styles */
 
 /* Importing webfonts */
