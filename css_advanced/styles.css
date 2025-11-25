@@ -1,0 +1,527 @@
+/* CSS Reset                  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------ */
+/* 2. Global Variables and Body Styles  */
+/* ------------------------------------ */
+
+:root {
+    /* Colors (Matching Figma) */
+    --color-primary: #C271FF;
+    /* Bright Purple (Main accent/buttons) */
+    --color-dark-blue: #071629;
+    /* Dark background (Header, Footer, Membership) */
+    --color-white: #FFFFFF;
+    --color-text-dark: #333333;
+    /* Standard dark text */
+    --color-text-gray: #A8A8A8;
+    /* Used in membership text */
+    --color-yellow: #FFC700;
+    /* Star color */
+
+    /* Fonts (Matching Figma: Source Sans Pro and Spin Cycle OT) */
+    --font-family-primary: 'Source Sans Pro', sans-serif;
+    --font-family-title: 'Spin Cycle OT', sans-serif;
+
+    /* Layout Constants */
+    --content-width: 1000px;
+    --padding-sides: 20px;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    color: var(--color-text-dark);
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+
+/* Reusable Button Style */
+.button-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 22px;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary:hover {
+    opacity: 0.9;
+}
+
+
+/* ------------------------------------ */
+/* 3. Header (Navigation) Styling (Task 2) */
+/* ------------------------------------ */
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    color: var(--color-white);
+    position: relative;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-sides);
+}
+
+nav img {
+    width: 140px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+/* ------------------------------------ */
+/* 4. Hero Banner (First Section) Styling (Task 2) */
+/* ------------------------------------ */
+
+main section:first-of-type {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    /* Background Image setup with Dark Overlay */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('images/Object.png');
+    /* CRITICAL: Check this path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hero Title Block (Get schooled) */
+main section:first-of-type>div:first-child {
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+main section:first-of-type h1 {
+    font-family: var(--font-family-title);
+    font-size: 120px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+main section:first-of-type span {
+    display: inline-block;
+    margin: 20px 15px 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Applying reusable button class */
+main section:first-of-type button {
+    margin-top: 40px;
+    /* This button should have the reusable primary button style */
+}
+
+/* "Learn from the pros" h2 */
+main section:first-of-type h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 40px 0 60px;
+}
+
+/* Wrapper for the four person blocks (Avatars) */
+main section:first-of-type>div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 900px;
+    /* Constrain width and center */
+    margin: 0 auto 100px;
+    padding: 0 var(--padding-sides);
+}
+
+/* Individual Person Block Styling */
+main section:first-of-type>div:nth-child(2)>div {
+    text-align: center;
+    width: 25%;
+}
+
+/* Teacher Avatar Image Styling */
+main section:first-of-type img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+main section:first-of-type h3 {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+main section:first-of-type p {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+/* ------------------------------------ */
+/* 5. Quotes Section (Task 3)           */
+/* ------------------------------------ */
+
+/* Targeting the second section in main */
+main section:nth-of-type(2) {
+    background-color: var(--color-primary);
+    /* Correct background color */
+    color: var(--color-white);
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main section:nth-of-type(2)>div {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    gap: 60px;
+}
+
+main section:nth-of-type(2) img {
+    width: 160px;
+    /* Correct size */
+    height: 160px;
+    border-radius: 50%;
+    /* Rounded image */
+    object-fit: cover;
+    flex-shrink: 0;
+    /* Prevents image from shrinking */
+}
+
+/* Quote content block */
+main section:nth-of-type(2)>div>div {
+    text-align: left;
+}
+
+main section:nth-of-type(2) blockquote {
+    font-size: 18px;
+    margin-bottom: 10px;
+    /* Ensure the quote text is distinct */
+}
+
+main section:nth-of-type(2) h3 {
+    font-weight: bold;
+    /* Author name in bold */
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+main section:nth-of-type(2) p {
+    font-style: italic;
+    /* Author title in italic */
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* ------------------------------------ */
+/* 6. Videos List (Task 4)              */
+/* ------------------------------------ */
+
+main section:nth-of-type(3) {
+    background-color: var(--color-white);
+    /* Background is white */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+main section:nth-of-type(3) h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* Styling "Popular" in "Most Popular" */
+main section:nth-of-type(3) h2 span {
+    color: var(--color-primary);
+}
+
+/* Container for video grid/list */
+main section:nth-of-type(3)>div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+    gap: 30px;
+    max-width: var(--content-width);
+    /* Constrain width and center */
+    margin: 0 auto;
+}
+
+/* Individual Video Item */
+main section:nth-of-type(3)>div>div {
+    width: 250px;
+    text-align: left;
+}
+
+/* Video image and player icon (Complex selector may be needed for player icon) */
+main section:nth-of-type(3) img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+main section:nth-of-type(3) h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+main section:nth-of-type(3) p {
+    font-size: 14px;
+    margin: 5px 0 10px;
+}
+
+/* Author Block */
+main section:nth-of-type(3)>div>div>div:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+main section:nth-of-type(3)>div>div>div:nth-of-type(1) img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+main section:nth-of-type(3) h4 {
+    color: var(--color-primary);
+    /* Author name in purple */
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Rating Block (Stars + Duration) */
+main section:nth-of-type(3)>div>div>div:nth-of-type(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Styling the stars */
+main section:nth-of-type(3) .fa-star {
+    color: var(--color-yellow);
+    font-size: 12px;
+}
+
+/* Ensure only 5 stars are visible and properly aligned */
+main section:nth-of-type(3)>div>div>div:nth-of-type(2)>div {
+    display: flex;
+    gap: 3px;
+}
+
+/* Duration text */
+main section:nth-of-type(3)>div>div>p:last-child {
+    color: var(--color-primary);
+    /* Duration text in purple */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* ------------------------------------ */
+/* 7. Membership Section (Task 5)       */
+/* ------------------------------------ */
+
+main section:nth-of-type(4) {
+    background-color: var(--color-dark-blue);
+    /* Correct background color */
+    color: var(--color-white);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+main section:nth-of-type(4) h2 {
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+/* Styling "Free" in "Free membership" */
+main section:nth-of-type(4) h2 span {
+    color: var(--color-primary);
+}
+
+/* Membership Features Container */
+main section:nth-of-type(4)>div:first-of-type {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    max-width: var(--content-width);
+    /* Constrain width and center */
+    margin: 0 auto 60px;
+}
+
+/* Individual Membership Item */
+main section:nth-of-type(4)>div:first-of-type>div {
+    width: 200px;
+    text-align: center;
+}
+
+/* Icon Styling */
+main section:nth-of-type(4) img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+main section:nth-of-type(4) h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+main section:nth-of-type(4) p {
+    color: var(--color-text-gray);
+    /* Gray text */
+    font-size: 14px;
+}
+
+/* Register Button */
+main section:nth-of-type(4) button {
+    /* Uses the reusable button style */
+    margin-top: 30px;
+}
+
+/* ------------------------------------ */
+/* 8. FAQ Section (Task 6)              */
+/* ------------------------------------ */
+
+main section:nth-of-type(5) {
+    background-color: var(--color-white);
+    /* Background is white */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+main section:nth-of-type(5) h2 {
+    font-size: 32px;
+    margin-bottom: 60px;
+}
+
+/* Main content container for the FAQ columns */
+main section:nth-of-type(5)>div {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: var(--content-width);
+    /* Constrain width and center */
+    margin: 0 auto;
+}
+
+/* Left and Right FAQ columns */
+main section:nth-of-type(5)>div>div {
+    width: 45%;
+    /* Approx half width for column layout */
+    text-align: left;
+}
+
+/* FAQ Question Title */
+main section:nth-of-type(5) h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* FAQ Answer Text */
+main section:nth-of-type(5) p {
+    font-size: 14px;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* ------------------------------------ */
+/* 9. Footer (Task 7)                   */
+/* ------------------------------------ */
+
+footer {
+    background-color: var(--color-dark-blue);
+    /* Correct background color */
+    color: var(--color-white);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer section {
+    max-width: var(--content-width);
+    /* Constrain width and center */
+    margin: 0 auto;
+}
+
+/* Footer Top Row (Logo + Social Icons) */
+footer section>div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Footer Logo */
+footer section img {
+    width: 140px;
+    height: auto;
+}
+
+/* Social Icons */
+footer section i {
+    font-size: 24px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: var(--color-white);
+    /* Ensure icons are white */
+}
+
+/* Copyright Text */
+footer section p {
+    font-size: 12px;
+    color: var(--color-text-gray);
+    margin-top: 30px;
+}
